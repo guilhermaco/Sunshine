@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <!-- Entries: Constants for the application logic -->
+        <string-array name="pref_unit_entries">
+            <item>@string/pref_units_metric</item>
+            <item>@string/pref_units_imperial</item>
+        </string-array>
+        <!-- Entries Values: Actual string visible on the UI -->
+        <string-array name="pref_unit_values">
+            <item>@string/pref_units_metric</item>
+            <item>@string/pref_units_imperial</item>
+        </string-array>
+</resources>
