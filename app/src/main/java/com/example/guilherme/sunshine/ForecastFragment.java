@@ -149,10 +149,6 @@ public class ForecastFragment extends Fragment implements AdapterView.OnItemClic
             return highLowStr;
         }
 
-        /**
-         * Take the String representing the complete forecast in JSON Format and
-         * pull out the data we need to construct the Strings needed for the wireframes.
-         */
         private String[] getWeatherDataFromJson(String forecastJsonStr, int numDays)
                 throws JSONException {
 
@@ -227,7 +223,6 @@ public class ForecastFragment extends Fragment implements AdapterView.OnItemClic
 
         @Override
         protected String[] doInBackground(String... params) {
-
             // If there's no zip code, there's nothing to look up.  Verify size of params.
             if (params.length == 0) {
                 return null;

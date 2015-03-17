@@ -84,10 +84,11 @@ public class DetailActivity extends ActionBarActivity {
         public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
             // Inflate the menu; this adds items to the action bar if it is present.
             inflater.inflate(R.menu.detail_menu_fragment, menu);
-            // Retrieve the share menu item
             MenuItem menuItem = menu.findItem(R.id.action_share);
-            // Get the provider and hold onto it to set/change the share intent.
-            // MenuItemCompat???
+
+            // This is a provider for a share action. It is responsible for creating views that
+            // enable data sharing and also to show a sub menu with sharing activities if the
+            // hosting item is placed on the overflow menu.
             ShareActionProvider mShareActionProvider =
                     (ShareActionProvider) MenuItemCompat.getActionProvider(menuItem);
             // Attach an intent to this ShareActionProvider.  You can update this at any time,
@@ -100,8 +101,8 @@ public class DetailActivity extends ActionBarActivity {
         }
         private Intent createShareForecastIntent() {
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
-            // ???
             shareIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            // setting the MIME type
             shareIntent.setType("text/plain");
             shareIntent.putExtra(Intent.EXTRA_TEXT,
                     mForecastStr + "#SunshineApp");
